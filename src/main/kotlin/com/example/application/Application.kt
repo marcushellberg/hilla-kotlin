@@ -18,8 +18,8 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 @SpringBootApplication
 @Theme(value = "hilla-kotlin")
 @PWA(name = "hilla-kotlin", shortName = "hilla-kotlin", offlineResources = [])
-open class Application : SpringBootServletInitializer(), AppShellConfigurator {
-    fun main(args: Array<String>) {
-        runApplication<Application>(*args)
-    }
+open class Application : SpringBootServletInitializer(), AppShellConfigurator
+
+fun main(args: Array<String>) {
+    runApplication<Application>(*args)
 }
