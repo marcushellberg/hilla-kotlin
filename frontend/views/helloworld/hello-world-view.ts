@@ -2,7 +2,6 @@ import '@vaadin/button';
 import '@vaadin/notification';
 import { Notification } from '@vaadin/notification';
 import '@vaadin/text-field';
-import Message from 'Frontend/generated/com/example/application/endpoints/helloworld/HelloWorldEndpoint/Message';
 import * as HelloWorldEndpoint from 'Frontend/generated/HelloWorldEndpoint';
 import { html } from 'lit';
 import { customElement, state } from 'lit/decorators.js';
@@ -10,7 +9,7 @@ import { View } from '../../views/view';
 
 @customElement('hello-world-view')
 export class HelloWorldView extends View {
-  name = '';
+  @state() name = '';
 
   connectedCallback() {
     super.connectedCallback();
@@ -19,7 +18,7 @@ export class HelloWorldView extends View {
 
   render() {
     return html`
-      <vaadin-text-field label="Your name" @value-changed=${this.nameChanged}></vaadin-text-field>
+      <vaadin-text-field label="Your name" .value=${this.name} @value-changed=${this.nameChanged}></vaadin-text-field>
       <vaadin-button @click=${this.sayHello}>Say hello</vaadin-button>
     `;
   }
