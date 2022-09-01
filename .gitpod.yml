@@ -1,0 +1,15 @@
+tasks:
+  - init: ./mvnw install
+  - command: ./mvnw
+ports:
+  - port: 8080
+    onOpen: open-preview
+github:
+  prebuilds:
+    master: true
+
+vscode:
+  extensions:
+    - "redhat.java"
+    - "fwcd.kotlin"
+    - "runem.lit-plugin"
